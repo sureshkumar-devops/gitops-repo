@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+serviceAccount:
+  create: false
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000  
+
+ingress:
+  enabled: false
+
+autoscaling:
+  enabled: false
+
