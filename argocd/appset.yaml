@@ -8,8 +8,14 @@ spec:
    - list:
       elements:
         - env: dev
+          branch: dev
+          namespace: dev  
         - env: prod
+          branch: master
+          namespace: prod
         - env: staging
+          branch: staging
+          namespace: staging  
   template:
     metadata:
       name: '{{env}}-my-app'
@@ -17,7 +23,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/sureshkumar-devops/gitops-repo.git
-        targetRevision: master
+        targetRevision: '{{branch}}'
         path: charts/my-app
         helm:
          valueFiles:
