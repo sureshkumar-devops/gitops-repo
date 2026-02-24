@@ -7,7 +7,7 @@ image:
   tag: dev-1  
 =======
   repository: nginx
-  tag: "1.25"  
+  tag: "1.24444"  
 
 
 >>>>>>> 52ac859 (change values in dev env)
