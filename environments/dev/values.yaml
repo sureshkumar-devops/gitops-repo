@@ -1,6 +1,13 @@
 replicaCount: 1
 
 image:
+<<<<<<< HEAD
   repository: lehardocker/my-app
   pullPolicy: IfNotPresent
   tag: dev-1  
+=======
+  repository: nginx
+  tag: "1.24444"  
+
+
+>>>>>>> 52ac859 (change values in dev env)
