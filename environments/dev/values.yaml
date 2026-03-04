@@ -1,1 +1,6 @@
 replicaCount: 1
+
+image:
+  repository: lehardocker/my-app
+  pullPolicy: IfNotPresent
+  tag: dev-1  
