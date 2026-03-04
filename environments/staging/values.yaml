@@ -1,5 +1,6 @@
 replicaCount: 2
 
 image:
-  repository: nginx
-  tag: "1.24444"  
+  repository: lehardocker/my-app
+  tag: staging-1
+
