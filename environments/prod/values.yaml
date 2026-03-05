@@ -2,4 +2,4 @@ replicaCount: 3
 
 image:
   repository: nginx
-  tag: "master-b0776bc"
+  tag: "dev-b7f1583"
