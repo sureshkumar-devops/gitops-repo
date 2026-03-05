@@ -2,4 +2,4 @@ replicaCount: 2
 
 image:
   repository: lehardocker/my-app
-  tag: staging-1
+  tag: "dev-1"
