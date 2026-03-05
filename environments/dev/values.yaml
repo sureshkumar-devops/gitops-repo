@@ -3,4 +3,4 @@ replicaCount: 1
 image:
   repository: lehardocker/gitops-app
   pullPolicy: IfNotPresent
-  tag: "dev-667b910"
+  tag: "dev-21dab60"
