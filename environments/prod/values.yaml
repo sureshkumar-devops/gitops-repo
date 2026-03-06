@@ -1,5 +1,10 @@
 replicaCount: 3
 
+deploymentStrategy: bluegreen
+
 image:
-  repository: nginx
-  tag: "1.24444"  
+  repository: lehardocker/gitops-app
+  pullPolicy: IfNotPresent
+  tag: "dev-21dab60"
+
+ 

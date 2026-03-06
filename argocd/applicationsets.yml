@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: multi-env
+  namespace: argocd
+spec:
+ generators:
+ - list:
+    elements:
+    - env: dev
+      namespace: dev
+      branch: dev
+    - env: staging
+      namespace: staging
+      branch: staging
+    - env: prod
+      branch: master
+      namespace: prod
+
+ template:
+   metadata:
+    name: '{{env}}-my-app'
+   spec:
+    project: default
+    source:
+     repoURL: https://github.com/sureshkumar-devops/gitops-repo.git
+     targetRevision: '{{branch}}'
+     path: charts/my-app
+     helm:
+          valueFiles:
+          - ../../environments/{{env}}/values.yaml
+    destination:     
+     server: https://kubernetes.default.svc
+     namespace: '{{env}}'       
+    syncPolicy:
+     automated:
+       selfHeal: true
+       prune: true
+     syncOptions:
+     - CreateNamespace=true

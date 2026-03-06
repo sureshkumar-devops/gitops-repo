@@ -1,5 +1,11 @@
 replicaCount: 2
 
+
+deploymentStrategy: canary
+
 image:
-  repository: lehardocker/my-app
-  tag: staging-1
+  repository: lehardocker/gitops-app
+  pullPolicy: IfNotPresent
+  tag: "dev-21dab60"
+
+
